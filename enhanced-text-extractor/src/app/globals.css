@@ -1,8 +1,44 @@
-.main {
+/* Add these styles to your CSS file or in your component's style tag */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #e6f7ff;
+}
+
+.mainfileupload {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70vh;
+}
+.main {
+  display: flex;
+  justify-content: center;
 }
 .file-upload-form {
   width: fit-content;
@@ -113,28 +149,25 @@
   }
 }
 
-
-table,tr,thead,td{
-  border: 1px solid grey;
-}
-td,th{
+td,
+th {
   padding: 10px;
 }
-table{
+table {
   width: 50%;
-  margin-top: 220px;
 }
 
 .button {
   align-items: center;
   appearance: none;
-  background-color: #EEF2FF;
+  background-color: #eef2ff;
   border-radius: 8px;
   border-width: 2px;
-  border-color: #536DFE;
-  box-shadow: rgba(83, 109, 254, 0.2) 0 2px 4px, rgba(83, 109, 254, 0.15) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  border-color: #536dfe;
+  box-shadow: rgba(83, 109, 254, 0.2) 0 2px 4px,
+    rgba(83, 109, 254, 0.15) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
-  color: #536DFE;
+  color: #536dfe;
   cursor: pointer;
   display: inline-flex;
   font-family: "JetBrains Mono", monospace;
@@ -159,16 +192,18 @@ table{
 
 .button:focus {
   outline: none;
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(83, 109, 254, 0.4) 0 2px 4px, rgba(83, 109, 254, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(83, 109, 254, 0.4) 0 2px 4px,
+    rgba(83, 109, 254, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
 }
 
 .button:hover {
-  box-shadow: rgba(83, 109, 254, 0.3) 0 4px 8px, rgba(83, 109, 254, 0.2) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-shadow: rgba(83, 109, 254, 0.3) 0 4px 8px,
+    rgba(83, 109, 254, 0.2) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
 .button:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
+  box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
 }
 
@@ -202,7 +237,8 @@ table{
 
 /* Animations */
 @keyframes ringA {
-  from, 4% {
+  from,
+  4% {
     stroke-dasharray: 0 660;
     stroke-width: 20;
     stroke-dashoffset: -330;
@@ -220,7 +256,8 @@ table{
     stroke-dashoffset: -595;
   }
 
-  40%, 54% {
+  40%,
+  54% {
     stroke-dasharray: 0 660;
     stroke-width: 20;
     stroke-dashoffset: -660;
@@ -238,7 +275,8 @@ table{
     stroke-dashoffset: -925;
   }
 
-  90%, to {
+  90%,
+  to {
     stroke-dasharray: 0 660;
     stroke-width: 20;
     stroke-dashoffset: -990;
@@ -246,7 +284,8 @@ table{
 }
 
 @keyframes ringB {
-  from, 12% {
+  from,
+  12% {
     stroke-dasharray: 0 220;
     stroke-width: 20;
     stroke-dashoffset: -110;
@@ -264,7 +303,8 @@ table{
     stroke-dashoffset: -195;
   }
 
-  48%, 62% {
+  48%,
+  62% {
     stroke-dasharray: 0 220;
     stroke-width: 20;
     stroke-dashoffset: -220;
@@ -282,7 +322,8 @@ table{
     stroke-dashoffset: -305;
   }
 
-  98%, to {
+  98%,
+  to {
     stroke-dasharray: 0 220;
     stroke-width: 20;
     stroke-dashoffset: -330;
@@ -308,7 +349,8 @@ table{
     stroke-dashoffset: -175;
   }
 
-  36%, 58% {
+  36%,
+  58% {
     stroke-dasharray: 0 440;
     stroke-width: 20;
     stroke-dashoffset: -220;
@@ -326,7 +368,8 @@ table{
     stroke-dashoffset: -395;
   }
 
-  94%, to {
+  94%,
+  to {
     stroke-dasharray: 0 440;
     stroke-width: 20;
     stroke-dashoffset: -440;
@@ -334,7 +377,8 @@ table{
 }
 
 @keyframes ringD {
-  from, 8% {
+  from,
+  8% {
     stroke-dasharray: 0 440;
     stroke-width: 20;
     stroke-dashoffset: 0;
@@ -352,7 +396,8 @@ table{
     stroke-dashoffset: -175;
   }
 
-  44%, 50% {
+  44%,
+  50% {
     stroke-dasharray: 0 440;
     stroke-width: 20;
     stroke-dashoffset: -220;
@@ -370,7 +415,8 @@ table{
     stroke-dashoffset: -395;
   }
 
-  86%, to {
+  86%,
+  to {
     stroke-dasharray: 0 440;
     stroke-width: 20;
     stroke-dashoffset: -440;

@@ -36,7 +36,7 @@ const FileUpload = ({ onShowTable }) => {
       <button className="button" role="button"> Text Extractor Tool!</button>
 
       </center>
-      <div {...getRootProps()} className="main">
+      <div {...getRootProps()} className="mainfileupload">
         <input {...getInputProps()} />
         <div>
           {loading ? (

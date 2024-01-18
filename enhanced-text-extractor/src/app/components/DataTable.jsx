@@ -23,7 +23,7 @@ function DataTable({ fileData, onClose }) {
   return (
     <div>
       <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}
+        style={{ display: "flex", justifyContent: "center", margin: "50px 0" }}
       >
         <div>
           <button className="button" onClick={onClose}>
