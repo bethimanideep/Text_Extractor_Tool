@@ -141,18 +141,25 @@ const extractTextFromPDFBuffer = async (buffer) => {
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
-      let chunks = [];
+      const pdfBuffer = await new Promise((resolve, reject) => {
+        const chunks = [];
 
-      req.on("data", (chunk) => {
-        chunks.push(chunk);
+        req.on("data", (chunk) => {
+          chunks.push(chunk);
+        });
+
+        req.on("end", () => {
+          resolve(Buffer.concat(chunks));
+        });
+
+        req.on("error", (error) => {
+          reject(error);
+        });
       });
 
-      req.on("end", async () => {
-        const pdfBuffer = Buffer.concat(chunks);
-        const finaldata = await extractTextFromPDFBuffer(pdfBuffer);
-        console.log(finaldata, "final data received");
-        res.json({ finaldata, success: true });
-      });
+      const finaldata = await extractTextFromPDFBuffer(pdfBuffer);
+      console.log(finaldata, "final data received");
+      res.status(200).json({ finaldata });
     } catch (error) {
       console.error("Error processing PDF:", error.message);
       res.status(500).json({ error: "Internal Server Error" });
