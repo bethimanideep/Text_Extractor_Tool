@@ -13,7 +13,7 @@ const FileUpload = ({ onShowTable }) => {
     formData.append("file", file);
 
     try {
-      const response = await axios.post("https://text-extractor-tool.vercel.app/api/extract-text", formData, {
+      const response = await axios.post("/api/extract-text", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
