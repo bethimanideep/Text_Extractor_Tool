@@ -1,19 +1,20 @@
-import DataTable from "./components/DataTable"
+"use client";
+import { useState } from "react";
 import FileUpload from "./components/FileUpload";
 
-
+import DataTable from "./components/DataTable";
 export default function Home() {
+  const [showFile, setShowFile] = useState(true);
+  const [fileData, setFileData] = useState(null);
   // Mock data for testing, replace with actual data
-  const mockData = [
-    { column1: 'Value 1', column2: 'Value 2' },
-    // Add more rows based on your data structure
-  ];
-
+  console.log(showFile,fileData);
   return (
-    <div>
-      <h1>Enhanced Text Extractor</h1>
-      <FileUpload />
-      <DataTable data={mockData} />
-    </div>
+    <>
+      {showFile ? (
+        <FileUpload onShowTable={(data) => {setFileData(data);setShowFile(false);}} />
+      ) : (
+        <DataTable fileData={fileData} onClose={()=>{setShowFile(true)}} />
+      )}
+    </>
   );
 }

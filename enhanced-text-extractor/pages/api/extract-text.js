@@ -76,9 +76,9 @@ export default async function handler(req, res) {
       .then(async ({ fields, files }) => {
         console.log(options);
         const data = await extractTextFromPDF(originalpath);
-        console.log("got the data", data);
         const finaldata = await processing(data);
-        res.json("data", finaldata);
+        console.log(finaldata,"final data received");
+        res.json({finaldata,success:"True"});
       })
       .catch((error) => {
         console.error("Error parsing the form:", error.message);
@@ -90,7 +90,6 @@ export default async function handler(req, res) {
 }
 
 async function processing(text) {
-  console.log("inside processing", text);
 
   // Instantiate the parser
   const parser = new JsonOutputFunctionsParser();
@@ -203,6 +202,5 @@ async function processing(text) {
 
   // Invoke the runnable with an input
   const result = await runnable.invoke([new HumanMessage(text)]);
-
-  console.log({ result });
+  return result
 }
