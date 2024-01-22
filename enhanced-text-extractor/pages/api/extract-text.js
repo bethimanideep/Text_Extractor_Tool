@@ -19,7 +19,6 @@ export const config = {
 const extractTextFromPDFBuffer = async (buffer) => {
   try {
     const data = await pdfParse(buffer);
-    console.log(data.text);
 
     // Instantiate the parser
     const parser = new JsonOutputFunctionsParser();
@@ -158,7 +157,6 @@ export default async function handler(req, res) {
       });
 
       const finaldata = await extractTextFromPDFBuffer(pdfBuffer);
-      console.log(finaldata, "final data received");
       res.status(200).json({ finaldata });
     } catch (error) {
       console.error("Error processing PDF:", error.message);
